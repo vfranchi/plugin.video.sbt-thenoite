@@ -7,7 +7,7 @@ do canal do The Noite no Youtube.
 
 # Instalação
 
-Baixe o .zip do plugin. No XBMC, acesse Sistema > Configurações > Add-ons > Instalar a partir de um ZIP.
+Baixe o [.zip do plugin](https://github.com/vfranchi/plugin.video.sbt-thenoite/releases/tag/0.0.3). No XBMC, acesse Sistema > Configurações > Add-ons > Instalar a partir de um ZIP.
 Encontre o .zip do plugin baixado e confirme.
 
 # Utilização
