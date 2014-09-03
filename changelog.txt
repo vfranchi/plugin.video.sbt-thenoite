@@ -1,3 +1,7 @@
+v0.1.0
+- Added support to other The Noite videos from the site
+- Correctly sort each part of the whole episode
+
 v0.0.3
 - Added progress dialog feedback
 - New icon
