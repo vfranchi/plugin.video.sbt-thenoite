@@ -68,7 +68,10 @@ elif (mode[0] == "listitems"):
 	if ("error" in videos):
 		# do nothing
 		toaster = xbmcgui.Dialog();
-		toaster.notification(_(30006), _(30007), xbmcgui.NOTIFICATION_WARNING, 3000);
+		try:
+			toaster.notification(_(30006), _(30007), xbmcgui.NOTIFICATION_WARNING, 3000);
+		except AttributeError:
+			toaster.ok(_(30006), _(30007));
 		pass
 	elif ((authorId in thenoite_authors_slug) and thenoite_authors_slug[authorId] == "naintegra"):
 		# grouping urls by episodes
