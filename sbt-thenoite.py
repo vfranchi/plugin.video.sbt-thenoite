@@ -8,6 +8,7 @@ import urllib2;
 import urlparse;
 import json;
 import re;
+import base64;
 
 # getting settings strings
 settings = xbmcaddon.Addon("plugin.video.sbt-thenoite");
@@ -140,11 +141,37 @@ elif (mode[0] == "listitems"):
 		
 	xbmcplugin.endOfDirectory(addon_handle);
 elif (mode[0] == "videourl"):
+	video = None;
 	iframe = fetchUrl(thenoite_urls["video_url"].replace("$videoId", args.get("play_video")[0]));
 	match = re.compile("window.mediaJson = (.+?);").findall(iframe);
-	if match[0]:
+	if len(match) > 0 and match[0]:
 		video = json.loads(match[0]);
-		
+	else: #try to get video URL from mediaToken
+		match = re.compile("window.mediaToken = (.+?);").findall(iframe);
+		if len(match) > 0 and match[0]:
+			# getting max-width from body tag
+			maxWidth = re.compile("<body .*max-width:(.*);.*>").findall(iframe);
+			xbmc.log("["+_(30006)+"]: Found maxWidth "+str(maxWidth), 0);
+			if len(maxWidth) > 0:
+				xbmc.log("["+_(30006)+"]: Found token "+match[0], 0);
+				
+				maxWidth = maxWidth[0].strip().replace("px", "");
+				xbmc.log("["+_(30006)+"]: max-width "+maxWidth, 0);
+				maxWidth = int((int(maxWidth) ^ 345) - 1E4) + 1;
+				discard = match[0][0:maxWidth]; #keeping this for debug purposes
+				xbmc.log("["+_(30006)+"]: Will discard "+discard, 0);
+				
+				encodedToken = match[0][maxWidth:-maxWidth];
+				xbmc.log("["+_(30006)+"]: Encoded token "+encodedToken, 0);
+				
+				if(len(encodedToken) % 4 == 2):
+					encodedToken = encodedToken + "==";
+				elif(len(encodedToken) % 4 == 3):
+					encodedToken = encodedToken + "=";
+					
+				video = json.loads(base64.b64decode(encodedToken));
+				
+	if (video):
 		# finding best video thumbnail, optimal is 480 x 360 by default
 		video_thumb = None;
 		for thumbnail in video["thumbnailList"]:
@@ -170,6 +197,17 @@ elif (mode[0] == "videourl"):
 						xbmc.Player().play(output["url"], listitem);
 						break;
 				break;
+	else:
+		xbmc.log("["+_(30006)+"]: Unable to find video for ID "+args.get("play_video")[0], 0);
+		
+		# do nothing
+		toaster = xbmcgui.Dialog();
+		try:
+			toaster.notification(_(30006), _(30008), xbmcgui.NOTIFICATION_WARNING, 3000);
+		except AttributeError:
+			toaster.ok(_(30006), _(30008));
+		pass
+			
 elif (mode[0] == "episodeurl"):
 	# Displaying progress dialog
 	pDialog = xbmcgui.DialogProgress();

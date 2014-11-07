@@ -1,3 +1,6 @@
+v0.1.2
+- Added support for Sambatech mediaToken decrypt
+
 v0.1.1
 - Fixed error when episode name didn’t have the "Part X" text
 
