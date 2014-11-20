@@ -7,9 +7,8 @@ do canal do The Noite no Youtube.
 
 # Instalação
 
-Após instalar o repositório brasileiro, no XBMC, acesse Sistema > Add-ons > Obter Add-ons, selecione
-o repositório recém instalado. Vá em Add-ons de vídeo e selecione o plugin SBT The Noite - Programas 
-na Integra.
+Baixe o [.zip do plugin](https://github.com/vfranchi/plugin.video.sbt-thenoite/releases). No XBMC, acesse Sistema > Configurações > Add-ons > Instalar a partir de um ZIP.
+Encontre o .zip do plugin baixado e confirme.
 
 # Utilização
 
