@@ -17,4 +17,6 @@
 	<!-- Settings messages -->
 	<string id="30900">Video Settings</string>
 	<string id="30901">Video quality</string>
+	<string id="30902">Plugin Analytics</string>
+	<string id="30903">I want to help the developers to better improve this plugin by sending[CR]anonymous usage statistics. (More details on the plugin's description)</string>
 </strings>
