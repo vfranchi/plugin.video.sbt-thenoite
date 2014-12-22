@@ -37,8 +37,10 @@ if (settings.getSetting("analytics") == "true"):
 
 # setting SBT urls
 thenoite_urls = {};
-thenoite_urls["menu_api"] = "http://api.sbt.com.br/1.4.5/medias/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,thumbnail,author&idsite=198&idSiteArea=1011&limit=100&orderBy=ordem&sort=asc";
-thenoite_urls["media_api"] = "http://api.sbt.com.br/1.4.5/videos/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,thumbnail,publishdate,secondurl&program=400&limit=300&orderBy=publishdate&category=$authorId&sort=desc";
+# thenoite_urls["menu_api"] = "http://api.sbt.com.br/1.4.5/medias/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,thumbnail,author&idsite=198&idSiteArea=1011&limit=100&orderBy=ordem&sort=asc";
+# thenoite_urls["media_api"] = "http://api.sbt.com.br/1.4.5/videos/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,thumbnail,publishdate,secondurl&program=400&limit=300&orderBy=publishdate&category=$authorId&sort=desc";
+thenoite_urls["menu_api"] = "http://api.sbt.com.br/1.5.0/medias/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,description,thumbnail,author,opcional&idsite=211&idSiteArea=1068&idPlaylist=3435&limit=100&orderby=ordem&sort=ASC";
+thenoite_urls["media_api"] = "http://api.sbt.com.br/1.5.0/videos/key=AE8C984EECBA4F7F835C585D5CB6AB4B&fields=id,title,idcategory,idprogram,program,thumbnail,publishdatestring,secondurl,playerkey,total&program=400&category=$authorId&limit=100&orderBy=publishdate&sort=desc";
 thenoite_urls["video_url"] = 'http://fast.player.liquidplatform.com/pApiv2/embed/25ce5b8513c18a9eae99a8af601d0943/$videoId';
 
 myCache = {};
@@ -59,7 +61,6 @@ thenoite_authors_slug = {
 	"4518" : "rodadadanoite",
 	"4520" : "cyberbullying",
 	"4528" : "chamadas"
-	
 };
 
 base_url = sys.argv[0];
@@ -76,7 +77,13 @@ def fetchUrl(url):
 	if (myCache.has_key(url) and time() - myCache[url]["timestamp"] < 1 * 24 * 3600):
 		return myCache[url]["data"];
 	else:
-		req = urllib2.Request(url);
+		header = {
+			"User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:34.0) Gecko/20100101 Firefox/34.0",
+			"Accept" : "application/json, text/javascript, */*; q=0.01",
+			"Origin" : "http://www.sbt.com.br",
+			"Referer" : "http://www.sbt.com.br/sbtvideos/programa/400/The-Noite-com-Danilo-Gentili/"
+		};
+		req = urllib2.Request(url, None, header);
 		try:
 			response = urllib2.urlopen(req);
 			data = response.read();
@@ -130,6 +137,7 @@ def parseMediaInfo(html):
 
 def clearCacheFor(url):
 	myCache.pop(url, None);
+	settings.setSetting("cache", pickle.dumps(myCache));
 
 mode = args.get("mode", None);
 
