@@ -145,7 +145,7 @@ if mode is None:
 	# settings.setSetting("welcome", "");
 	if (settings.getSetting("welcome") == ""): 
 		welcome = xbmcgui.Dialog();
-		opt = welcome.yesno("Welcome", "Hello dear fellow user,", "This plugin uses Analytics to help me decide what to improve on the next update. More details at the plugin's description.", "Do you want to take part on this epic journey?", "No. I'll pass, bro", "Yes! Count me in!");
+		opt = welcome.yesno(_(30009), _(30010), None, None, _(30011), _(30012));
 		if (opt == True):
 			settings.setSetting("analytics", "true");
 		else:
