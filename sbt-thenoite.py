@@ -330,7 +330,7 @@ elif (mode[0] == "videourl"):
 					if (output["labelText"] == userQuality):
 						# xbmc.log("["+_(30006)+"]: Match for user quality", 0);
 						listItem = xbmcgui.ListItem(video["title"]);
-						listItem.setInfo("video", {"Title" : video["title"], "Plot" : video["description"]});
+						listItem.setInfo("video", {"Title" : video["title"], "Plot" : video.get("description", "")});
 						if (video_thumb != None): # setting thubmnail and icon image, if any
 							listItem.setIconImage(video_thumb["url"]);
 							listItem.setThumbnailImage(video_thumb["url"]);
@@ -338,7 +338,7 @@ elif (mode[0] == "videourl"):
 					if (output["labelText"] == "480p"):
 						# xbmc.log("["+_(30006)+"]: Match for default quality", 0);
 						defaultListItem = xbmcgui.ListItem(video["title"]);
-						defaultListItem.setInfo("video", {"Title" : video["title"], "Plot" : video["description"]});
+						defaultListItem.setInfo("video", {"Title" : video["title"], "Plot" : video.get("description", "")});
 						if (video_thumb != None): # setting thubmnail and icon image, if any
 							defaultListItem.setIconImage(video_thumb["url"]);
 							defaultListItem.setThumbnailImage(video_thumb["url"]);
