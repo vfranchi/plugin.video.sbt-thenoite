@@ -11,14 +11,20 @@
 	
 	<!-- Error messages -->
 	<string id="30006">SBT The Noite</string>
-	<string id="30007">No video on this category</string>
-	<string id="30008">SBT API is currently offline</string>
+	<string id="30101">No video on this category</string>
+	<string id="30102">SBT API is currently offline</string>
+	<string id="30103">Video is no longer available</string>
 	
 	<!-- Welcome message -->
 	<string id="30009">Welcome</string>
 	<string id="30010">Hello dear fellow user,[CR]This plugin uses Analytics to help me decide what to improve on the next update. More details at the plugin's description.[CR]Do you want to take part on this epic journey?</string>
 	<string id="30011">No. I'll pass, bro</string>
 	<string id="30012">Yes! Count me in!</string>
+	
+	<!-- Navigation message -->
+	<string id="30201">Next Page</string>
+	<string id="30202">Previous Page</string>
+	<string id="30203">Rand-O-Matic!</string>
 		
 	<!-- Settings messages -->
 	<string id="30900">Video Settings</string>
