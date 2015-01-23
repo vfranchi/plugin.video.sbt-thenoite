@@ -5,7 +5,7 @@ O plugin SBT The Noite busca os vídeos do programa no site do SBT para tocá-lo
 O plugin busca os vídeos direto no site do SBT, assim você não tem os cortes que acontecem nos vídeos 
 do canal do The Noite no Youtube.
 
-Se você tiver alguma dúvida, um feedback, quer reportar um bug, ou apenas dizer um ou. Por favor, visite a thread oficial do plugin em [http://forum.kodi.tv/showthread.php?tid=203103]
+Se você tiver alguma dúvida, um feedback, quer reportar um bug, ou apenas dizer um oi. Por favor, visite a thread oficial do plugin em [http://forum.kodi.tv/showthread.php?tid=203103]
 
 # Instalação
 
