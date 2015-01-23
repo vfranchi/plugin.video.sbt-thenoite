@@ -1,3 +1,8 @@
+v0.2.1
+- Added pagination! Now you can watch every single video from any category
+- Added a random video feature, it chooses for you what will you watch
+- Fixed minor bugs
+
 v0.2.0
 - Added metrics system to improve plugin development
 - Changed SBT API version from 1.4.5 to 1.5.0
