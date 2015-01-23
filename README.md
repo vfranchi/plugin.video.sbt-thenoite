@@ -45,6 +45,8 @@ Se você gosta deste plugin, que tal dar um incentivo ao desenvolvedor para cont
 e atualizando este serviço que você tanto aprecia :-)
 
 Se você acha que as atualizações deste plugin estão muito devagar, doe um café para [vfranchi](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZUJBB8S23UZA).
+
 Se você acha que este plugin precisa de um pouco mais de criatividade, doe uma cerveja para [vfranchi](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZUJBB8S23UZA).
-Se você acha que este plugin precisa de ostentação, doe HUM milhão em barras de ouro para [vfranchi](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZUJBB8S23UZA).
-* Barras de ouro valem mais do que dinheiro.
+
+| Se você acha que este plugin precisa de ostentação, doe HUM milhão em barras de ouro para [vfranchi](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZUJBB8S23UZA).
+| \* Barras de ouro valem mais do que dinheiro.
