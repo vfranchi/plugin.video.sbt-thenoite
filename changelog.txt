@@ -1,3 +1,6 @@
+v0.2.2
+- Fixed minor bug that caused a crash when a video didn't have a date string
+
 v0.2.1
 - Added pagination! Now you can watch every single video from any category
 - Added a random video feature, it chooses for you what will you watch
