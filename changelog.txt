@@ -1,3 +1,7 @@
+v0.2.3
+- Added watched video feature.
+- Fixed minor bugs
+
 v0.2.2
 - Fixed minor bug that caused a crash when a video didn't have a date string
 
