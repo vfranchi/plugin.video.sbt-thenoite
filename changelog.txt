@@ -1,3 +1,6 @@
+v0.2.4
+- Added limit to number of videos per page in the plugin settings
+
 v0.2.3
 - Added watched video feature.
 - Fixed minor bugs
