@@ -1,3 +1,6 @@
+v0.2.5
+- Fixed major bug that caused videos to not play
+
 v0.2.4
 - Added limit to number of videos per page in the plugin settings
 
