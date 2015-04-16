@@ -25,6 +25,7 @@ ga = {
 	"appId" : addon.getAddonInfo("id")
 }
 randomButtonEnabled = False if (addon.getSetting("randomButtonEnabled") == "false") else True;
+playFullEpisodesByDefault = False if (addon.getSetting("playFullEpisodesByDefault") == "false") else True;
 
 if (addon.getSetting("analytics") == "true"):
 	from UniversalAnalytics import Tracker;
@@ -492,8 +493,6 @@ elif (mode[0] == "listitems"):
 			whole_url = makeUrl({"mode" : "episodeurl", "play_episode" : json.dumps(video_ids)});
 		
 			for video in episodes[episode]:
-				url = makeUrl({"mode" : "videourl", "play_video" : video["id"]});
-			
 				li = xbmcgui.ListItem(video["title"], iconImage=video["thumbnail"]);
 				li.setProperty('fanart_image', 'special://home/addons/plugin.video.sbt-thenoite/fanart.jpg');
 
@@ -505,8 +504,15 @@ elif (mode[0] == "listitems"):
 				else:
 					updateSeenUrl = makeUrl({"mode" : "mark-seen", "video_id" : video["id"]});
 					contextMenu.append((_(30008), 'XBMC.RunPlugin('+updateSeenUrl+')'));
-
-				contextMenu.append((_(30001), 'XBMC.RunPlugin('+whole_url+')'));
+			
+				if (playFullEpisodesByDefault):
+					url = makeUrl({"mode" : "videourl", "play_video" : video["id"]});
+					contextMenu.append((_(30010), 'XBMC.RunPlugin('+url+')'));
+					url = whole_url;
+				else:
+					url = makeUrl({"mode" : "videourl", "play_video" : video["id"]});
+					contextMenu.append((_(30001), 'XBMC.RunPlugin('+whole_url+')'));
+				
 				li.addContextMenuItems(contextMenu);
 				xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li);
 		

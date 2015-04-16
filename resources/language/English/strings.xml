@@ -12,6 +12,7 @@
 	<string id="30007">Untitled</string>
 	<string id="30008">Mark as watched</string>
 	<string id="30009">Mark as unwatched</string>
+	<string id="30010">Play only this video</string>
 	
 	<!-- Error messages -->
 	<string id="30101">No video on this category</string>
@@ -39,5 +40,6 @@
 	<string id="30903">I want to help the developers to better improve this plugin by sending[CR]anonymous usage statistics. (More details on the plugin's description)</string>
 	<string id="30904">Enable the random movie button Rand-O-Matic!</string>
 	<string id="30905">Videos per page</string>
+	<string id="30906">Play full episodes by default</string>
 	
 </strings>

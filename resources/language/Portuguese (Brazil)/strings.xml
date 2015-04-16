@@ -12,6 +12,7 @@
 	<string id="30007">Sem Título</string>
 	<string id="30008">Marcar como visto</string>
 	<string id="30009">Marcar como não-visto</string>
+	<string id="30010">Tocar apenas este vídeo</string>
 	
 	<!-- Error messages -->
 	<string id="30101">Nenhum vídeo nesta categoria</string>
@@ -39,5 +40,6 @@
 	<string id="30903">Gostaria de ajudar os desenvolvedores a melhorar este plugin enviando[CR]estatísticas anônimas de uso. (Mais detalhes na descrição do plugin)</string>
 	<string id="30904">Habilitar o botão de vídeo aleatório Roda a Roleta, Silvio!</string>
 	<string id="30905">Número de vídeos por página</string>
+	<string id="30906">Tocar episódio inteiro por padrão</string>
 	
 </strings>
