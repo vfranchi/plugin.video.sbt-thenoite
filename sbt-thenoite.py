@@ -195,11 +195,11 @@ def getXbmcVideoFromVideo(video, video_thumb):
 					header = {
 						"Host" : "brazilunblock.info"
 					};
-					ret["url"] = unblockBrazilUrl.replace("$videoUrl", urllib.quote(videoUrl))+"&t="+str(int(time.time()))+"|"+urllib.urlencode(header);
+					ret["url"] = unblockBrazilUrl.replace("$videoUrl", urllib.quote(videoUrl))+"|"+urllib.urlencode(header);
 				else:
 					ret["url"] = videoUrl;
 					
-				log("Video URL: "+ret["url"]);
+				# log("Video URL: "+ret["url"]);
 				ret["listitem"] = listItem;
 			break;
 			
