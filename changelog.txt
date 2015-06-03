@@ -1,3 +1,6 @@
+v0.2.7
+- Added a new proxy server for the user to choose
+
 v0.2.6
 - Added option to play full episode by default
 - Added support to play videos outside of Brazil
