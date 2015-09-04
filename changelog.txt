@@ -1,3 +1,6 @@
+v0.2.8
+- Fixed major bug that caused videos not to play
+
 v0.2.7
 - Added a new proxy server for the user to choose
 
