@@ -259,7 +259,7 @@ def playVideoList(videos_ids):
 		iframe = fetchUrl(thenoite_urls["video_url"].replace("$videoId", video_id));
 		video = parseMediaInfo(iframe);
 		
-		if ("error" in video and video["error"] == True):
+		if (video is None or ("error" in video and video["error"] == True)):
 			xbmc.log("["+_(30006)+"]: Unable to find video for ID "+video_id, 0);
 		
 			# taking note from the amount of errors the SBT API may throw
